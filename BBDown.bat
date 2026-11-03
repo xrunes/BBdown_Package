@@ -1,7 +1,9 @@
 @echo off
-chcp 65001
+cd /d "%~dp0"
 cls
-echo "è¯·ç²˜è´´éœ€è¦ä¸‹è½½çš„Bç«™è§†é¢‘é“¾æ¥"
-set /p BVlink=Bç«™è§†é¢‘é“¾æ¥ï¼š
-.\bin\BBDown.exe %BVlink%
+echo ÇëÕ³ÌùĞèÒªÏÂÔØµÄBÕ¾ÊÓÆµÁ´½Ó
+set /p BVlink=BÕ¾ÊÓÆµÁ´½Ó£º
+if "%BVlink%"=="" goto end
+.\bin\BBDown.exe "%BVlink%" --video-ascending --audio-ascending --skip-subtitle --skip-cover
+:end
 pause
